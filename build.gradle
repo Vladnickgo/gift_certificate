@@ -1,0 +1,50 @@
+plugins {
+    id 'org.gretty' version '3.0.9'
+}
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'idea'
+
+// JDK 11
+sourceCompatibility = 11
+targetCompatibility = 11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+    implementation 'javax.servlet:jstl:1.2'
+    implementation 'org.springframework:spring-webmvc:5.3.26'
+
+    implementation 'mysql:mysql-connector-java:8.0.32'
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+
+    // https://mvnrepository.com/artifact/org.mapstruct/mapstruct
+    implementation group: 'org.mapstruct', name: 'mapstruct', version: '1.5.3.Final'
+    // https://mvnrepository.com/artifact/org.mapstruct/mapstruct-processor
+    implementation group: 'org.mapstruct', name: 'mapstruct-processor', version: '1.5.3.Final'
+// https://mvnrepository.com/artifact/com.zaxxer/HikariCP
+    implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.1'
+
+
+
+
+    implementation 'org.webjars:bootstrap:5.2.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+    testImplementation 'org.springframework:spring-test:5.2.22.RELEASE'
+    testImplementation 'org.hamcrest:hamcrest-core:2.2'
+}
+
+gretty {
+    httpPort = 8080
+    contextPath = '/'
+    //servletContainer = 'jetty9.4'
+    servletContainer = 'tomcat9'
+}
+
+test {
+    useJUnitPlatform()
+}

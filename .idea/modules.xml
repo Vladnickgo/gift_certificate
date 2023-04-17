@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gift_certificate.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gift_certificate.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gift_sertificate.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gift_sertificate.main.iml" />
+    </modules>
+  </component>
+</project>
